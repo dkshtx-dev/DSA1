@@ -16,8 +16,10 @@ public class P15_AlphabeticRectangle02 {
         int m = sc.nextInt();
         
         for (int i = 1; i <= n; i++) {
+            char ch = 'A';
             for (int j = 1; j <= m; j++) {
-                System.out.print((char) ('A' + j - 1));
+                System.out.print(ch);
+                ch++;
             }
             System.out.println();
         }
