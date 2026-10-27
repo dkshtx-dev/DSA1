@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -33,7 +32,7 @@ public class CopyOnWriteArrayListDemo {
                 System.out.println("Added Butter while reading.");
             }
         }
-        // purani = new
+    
         System.out.println("Updated Shopping List: " + shoppingList);
 
         List<String> sharedList = new CopyOnWriteArrayList<>();

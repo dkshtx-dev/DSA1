@@ -14,29 +14,28 @@
  */
 import java.util.Scanner;
 
+
 public class H_Sort01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        if (!sc.hasNextInt()) return;
-        int t = sc.nextInt();
+        int t = sc.nextInt();          // Number of test cases
+
         while (t-- > 0) {
             int n = sc.nextInt();
-            int count0 = 0;
+            int c0 = 0, c1 = 0;
+
+            // Step 1: Count 0s and 1s
             for (int i = 0; i < n; i++) {
-                int val = sc.nextInt();
-                if (val == 0) {
-                    count0++;
-                }
+                int x = sc.nextInt();
+                if (x == 0) c0++;
+                else c1++;
             }
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < n; i++) {
-                if (i < count0) {
-                    sb.append("0 ");
-                } else {
-                    sb.append("1 ");
-                }
-            }
-            System.out.println(sb.toString().trim());
+
+            // Step 2: Print c0 zeros, then c1 ones
+            for (int i = 0; i < c0; i++) System.out.print("0 ");
+            for (int i = 0; i < c1; i++) System.out.print("1 ");
+
+            System.out.println();
         }
     }
 }

@@ -13,30 +13,38 @@
  */
 import java.util.Scanner;
 
-public class I_Reverse {
-    public static void main(String[] args) {
+public class I_Reverse
+{
+    public static void main (String[] args) 
+    {
         Scanner sc = new Scanner(System.in);
-        if (!sc.hasNextInt()) return;
+
         int n = sc.nextInt();
-        long[] arr = new long[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextLong();
+        int [] arr = new int[n];
+
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = sc.nextInt();    
         }
 
-        // In-place reversal using two pointers
-        int left = 0, right = n - 1;
-        while (left < right) {
-            long temp = arr[left];
-            arr[left] = arr[right];
+        int left = 0;
+        int right = n-1;
+        
+        while(left < right)
+        {
+            int temp = arr[left];
+            arr[left] =  arr[right];
             arr[right] = temp;
+            
+            
             left++;
             right--;
+           
         }
-
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < n; i++) {
-            sb.append(arr[i]).append(i == n - 1 ? "" : " ");
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]+ " ");
         }
-        System.out.println(sb.toString());
+        System.out.println();
     }
 }
