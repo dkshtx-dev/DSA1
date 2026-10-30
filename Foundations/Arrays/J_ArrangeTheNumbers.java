@@ -14,28 +14,36 @@
  */
 import java.util.Scanner;
 
-public class J_ArrangeTheNumbers {
-    public static void main(String[] args) {
+public class J_ArrangeTheNumbers
+{
+    public static void main (String[] args) 
+    {
         Scanner sc = new Scanner(System.in);
-        if (!sc.hasNextInt()) return;
         int t = sc.nextInt();
-        while (t-- > 0) {
+        while(t--> 0)
+        {
             int n = sc.nextInt();
-            int[] arr = new int[n];
-            int left = 0, right = n - 1;
+            int [] arr =  new int[n];
+            int left = 0;
+            int right = arr.length - 1;
+             
             int val = 1;
-            while (left <= right) {
-                if (val % 2 != 0) {
+            while(left <= right)
+            {
+                if(val % 2 != 0)
+                {
                     arr[left++] = val++;
-                } else {
+                }
+                else{
                     arr[right--] = val++;
                 }
             }
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < n; i++) {
-                sb.append(arr[i]).append(i == n - 1 ? "" : " ");
+            
+            for(int i=0;i<arr.length;i++)
+            {
+                System.out.print(arr[i]+ " ");
             }
-            System.out.println(sb.toString());
+            System.out.println();
         }
     }
 }

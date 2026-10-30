@@ -18,17 +18,29 @@ import java.util.Scanner;
 public class M_FindDuplicateNumber {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        if (!sc.hasNextInt()) return;
+        
         int t = sc.nextInt();
-        while (t-- > 0) {
+        
+        while(t-- > 0) {
             int n = sc.nextInt();
-            long sum = 0;
-            for (int i = 0; i < n; i++) {
-                sum += sc.nextInt();
+            int[] arr = new int[n];
+            
+            
+            for(int i = 0; i < arr.length; i++) {
+                arr[i] = sc.nextInt();
             }
-            long expectedSum = (long) (n - 2) * (n - 1) / 2;
-            long duplicate = sum - expectedSum;
-            System.out.println(duplicate);
+            
+            System.out.print("Duplicate numbers: ");
+            
+            
+            for(int i = 0; i < arr.length; i++) {
+                for(int j = i + 1; j < arr.length; j++) {
+                    if(arr[i] == arr[j]) {
+                        System.out.print(arr[i] + " ");
+                        break; 
+                }
+            }
+            System.out.println();
         }
     }
 }
