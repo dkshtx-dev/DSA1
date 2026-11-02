@@ -27,6 +27,7 @@ public class D_SearchIn2DMatrix {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 int val = sc.nextInt();
+                //or else if(arr[i][j] == x)
                 if (val == x) {
                     found = true;
                 }
